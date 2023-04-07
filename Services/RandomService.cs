@@ -1,15 +1,18 @@
-﻿namespace ProvaPub.Services
+﻿using System;
+
+namespace ProvaPub.Services
 {
 	public class RandomService
 	{
-		int seed;
+        Random seed;
 		public RandomService()
 		{
-			seed = Guid.NewGuid().GetHashCode();
-		}
+            seed = new Random(Guid.NewGuid().GetHashCode());
+        }
 		public int GetRandom()
 		{
-			return new Random(seed).Next(100);
+			var result = seed.Next(100);
+			return result;
 		}
 
 	}
