@@ -24,7 +24,6 @@ public class CustomerServiceTests
             new Customer { Id = 1, Name = "Customer1" },
             new Customer { Id = 2, Name = "Customer2" },
             new Customer { Id = 3, Name = "Customer3" },
-            // Adicione mais clientes conforme necessário
         };
 
         var customerService = new CustomerService(_mockContext.Object);
@@ -77,5 +76,4 @@ public class CustomerServiceTests
         await Assert.ThrowsAsync<ArgumentOutOfRangeException>(() => customerService.CanPurchase(1, 0));
     }
 
-    // Adicione mais testes conforme necessário para outras condições de negócio
 }
